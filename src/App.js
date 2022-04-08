@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<h1 style={{ background: 'green' }}>React Router v6</h1>
+			<nav
+				style={{
+					borderBottom: 'solid 1px',
+					paddingBottom: '1rem',
+					display: 'flex',
+					justifyContent: 'center',
+					gap: '20px',
+				}}
+			>
+				<Link to="/invoices">invoices</Link>
+				<Link to="/expences">expences</Link>
+			</nav>
+			<Outlet />
+		</div>
+	);
 }
 
 export default App;
