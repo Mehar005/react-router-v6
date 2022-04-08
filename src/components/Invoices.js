@@ -4,6 +4,7 @@ import { getInvoices } from '../data';
 import { useSearchParams, useLocation } from 'react-router-dom';
 
 function QueryNavLink({ to, ...props }) {
+	// this will return a NavLink that will change the url id but keeps the queryString e.g filter
 	const location = useLocation();
 	return <NavLink to={to + location.search} {...props} />;
 }
